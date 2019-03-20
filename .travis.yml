@@ -52,8 +52,13 @@ matrix:
 #      script: ant -Djava.awt.headless=true -Drmi_force_localhost=true -Dskip.bug52310=true test
 #      sudo: true # otherwise TEST_HTTPS.jmx -> analytics.usa.gov does not work
 
+    addons:
+      sonarcloud:
+        organization: "s4paneum-github"
+    token: $SONAR_TOKEN2
+
     mvn sonar:sonar \
     -Dsonar.projectKey=s4paneum_jmeter \
     -Dsonar.organization=s4paneum-github \
     -Dsonar.host.url=https://sonarcloud.io \
-    -Dsonar.login=a87a78def4ea7df13a48f02cdbb04354f32940eb
+    -Dsonar.login=5618eb01c3d50d203489b4fb8aba555cb8224c93
