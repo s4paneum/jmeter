@@ -11,7 +11,7 @@ script:
     -Dsonar.projectKey=s4paneum_jmeter
     -Dsonar.organization=s4paneum-github
     -Dsonar.host.url=https://sonarcloud.io
-    -Dsonar.login=4e9e49542c6efa90ebac7685d53673c24a97495c
+    -Dsonar.login=aa85b26c10247ed665218fef7a0df2198199dc2c
 
 before_script:
   - test "x$RUN_CHECKSTYLE" != 'x' || ant -Djava.awt.headless=true download_jars install
