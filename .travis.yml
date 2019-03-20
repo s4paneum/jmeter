@@ -58,7 +58,7 @@ matrix:
     token: $SONAR_TOKEN3
 
     mvn sonar:sonar \
-    -Dsonar.projectKey=s4paneum_wrk \
+    -Dsonar.projectKey=s4paneum_jmeter \
     -Dsonar.organization=s4paneum-github \
     -Dsonar.host.url=https://sonarcloud.io \
-    -Dsonar.login=4ffa205dadf9f61fc7baa5f0870d035239f3ee27
+    -Dsonar.login=4e9e49542c6efa90ebac7685d53673c24a97495c
