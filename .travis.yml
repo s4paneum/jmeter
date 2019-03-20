@@ -1,17 +1,22 @@
-sudo: false
 language: java
+sudo: false
 
 addons:
     sonarcloud:
-        organization: "s4paneum-github"
-token: $SONAR_TOKEN3
+        organization: "s4paneum-organization"
+        token:
+            secure: "9022a63edef996d821b84e34faedfb8361e6171c"
+jdk:
+- oraclejdk8
 
 script:
-    mvn sonar:sonar
-    -Dsonar.projectKey=s4paneum_jmeter
-    -Dsonar.organization=s4paneum-github
-    -Dsonar.host.url=https://sonarcloud.io
-    -Dsonar.login=aa85b26c10247ed665218fef7a0df2198199dc2c
+# JaCoCo is used to have code coverage, the agent has to be activated
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+
+cache:
+    directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
 
 before_script:
   - test "x$RUN_CHECKSTYLE" != 'x' || ant -Djava.awt.headless=true download_jars install
